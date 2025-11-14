@@ -20,3 +20,10 @@ Route::get('/test-log', function () {
     \Log::info('This is a test log!');
     return 'Check storage/logs/laravel.log';
 });
+// In routes/web.php or api.php (temporary)
+Route::get('/test-env', function() {
+    return [
+        'env' => env('SHOPIFY_LOCATION_GID'),
+        'config' => config('shopify.location_id'),
+    ];
+});
